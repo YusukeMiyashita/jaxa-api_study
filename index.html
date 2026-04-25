@@ -31,20 +31,22 @@
             </label>
         </section>
 
-        <!-- 3Dビュー -->
-        <div id="renderArea" class="viewer"></div>
-
-        <!-- 角度調整 -->
-        <section class="angles">
-            <label class="angle-control">
-                <span>垂直角度</span>
-                <input type="range" id="vAngle" value="0" min="-90" max="90">
-            </label>
-            <label class="angle-control">
-                <span>水平角度</span>
-                <input type="range" id="hAngle" value="0" min="-90" max="90">
-            </label>
-        </section>
+        <!-- 3Dビューと角度調整 -->
+        <div class="viewer-container">
+            <div class="angle-left">
+                <label class="angle-control">
+                    <span>垂直角度</span>
+                    <input type="range" id="vAngle" value="0" min="-90" max="90">
+                </label>
+            </div>
+            <div id="renderArea" class="viewer"></div>
+            <div class="angle-bottom">
+                <label class="angle-control">
+                    <span>水平角度</span>
+                    <input type="range" id="hAngle" value="0" min="-90" max="90">
+                </label>
+            </div>
+        </div>
 
         <!-- 選択した地点のデータ -->
         <section class="data-display">
