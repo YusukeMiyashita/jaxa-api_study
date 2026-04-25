@@ -93,37 +93,39 @@ body {
     cursor: pointer;
     user-select: none;
 }
-
+.controls input[type="checkbox"] {
+    accent-color: var(--color-accent);
+    -webkit-user-select: none;
+    user-select: none;
+}
 .controls input[type="checkbox"] {
     accent-color: var(--color-accent);
 }
 
 /* ビューア */
-.viewer {
-    width: var(--viewer-size);
-    height: var(--viewer-size);
-    margin: 0 auto var(--spacing-lg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-
-/* 角度調整 */
-.angles {
+.viewer-container {
     display: flex;
-    justify-content: center;
-    gap: var(--spacing-xl);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
 }
 
-.angle-control {
+.angle-left {
+    position: absolute;
+    left: calc(50% - var(--viewer-size) / 2 - 60px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.angle-left .angle-control {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
 }
 
-.angle-control span {
+.angle-left .angle-control span {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
 }
@@ -132,6 +134,31 @@ body {
     writing-mode: vertical-lr;
     height: 200px;
     accent-color: var(--color-accent);
+}
+
+.viewer {
+    width: var(--viewer-size);
+    height: var(--viewer-size);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.angle-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.angle-bottom .angle-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.angle-bottom .angle-control span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
 }
 
 #hAngle {
