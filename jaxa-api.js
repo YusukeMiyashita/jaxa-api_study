@@ -1,5 +1,5 @@
 // import
-import * as je from "https://data.earth.jaxa.jp/api/jabascript/v2.0.0/jaxa.earth.esm.js";
+import * as je from "./jaxa.earth.esm.js";
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 
 // JAXA Earth API データ
