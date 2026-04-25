@@ -1,0 +1,149 @@
+/* カスタムプロパティ */
+:root {
+    --color-bg: #1a1a2e;
+    --color-bg-secondary: #252540;
+    --color-border: #333;
+    --color-text: #eee;
+    --color-text-muted: #aaa;
+    --color-accent: #4a9eff;
+    --viewer-size: 640px;
+    --spacing-sm: 5px;
+    --spacing-md: 10px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
+    --radius: 4px;
+    --font-size-sm: 0.85rem;
+    --font-size-md: 0.9rem;
+    --font-size-lg: 1.5rem;
+}
+
+/* リセット */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    padding: var(--spacing-xl);
+}
+
+/* レイアウト */
+.main {
+    max-width: calc(var(--viewer-size) + var(--spacing-xl) * 2);
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.header h1 {
+    font-size: var(--font-size-lg);
+    font-weight: normal;
+}
+
+/* ローディング */
+.loading {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.loading progress {
+    flex: 1;
+    height: 8px;
+    border-radius: var(--radius);
+    appearance: none;
+}
+
+.loading progress::-webkit-progress-bar {
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius);
+}
+
+.loading progress::-webkit-progress-value {
+    background-color: var(--color-accent);
+    border-radius: var(--radius);
+}
+
+.message {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+    min-width: 100px;
+}
+
+/* コントロール */
+.controls {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.controls label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.controls input[type="checkbox"] {
+    accent-color: var(--color-accent);
+}
+
+/* ビューア */
+.viewer {
+    width: var(--viewer-size);
+    height: var(--viewer-size);
+    margin: 0 auto var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* 角度調整 */
+.angles {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.angle-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.angle-control span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+#vAngle {
+    writing-mode: vertical-lr;
+    height: 200px;
+    accent-color: var(--color-accent);
+}
+
+#hAngle {
+    width: 200px;
+    accent-color: var(--color-accent);
+}
+
+/* データ表示 */
+.data-display {
+    padding: var(--spacing-md);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius);
+    font-size: var(--font-size-md);
+    min-height: 1.5em;
+}
